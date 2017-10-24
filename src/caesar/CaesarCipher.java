@@ -23,7 +23,7 @@ public class CaesarCipher {
 			keyAdded = index + key;
 			//Doug's Method
 			keyAdded = (index + key) % alpha.length();
-			if (index == 26) {
+			if (plainText.charAt(i) == ' ') {
 				keyAdded = index;
 			}
 			
