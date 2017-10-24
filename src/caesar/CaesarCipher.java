@@ -2,7 +2,7 @@ package caesar;
 
 public class CaesarCipher {
 	
-	private String alpha = "abcdefghijklmnopqrstuvwxyz 123456789";
+	private String alpha = "abcdefghijklmnopqrstuvwxyz 123456789.:'";
 
 	public String encode(String plainText, int key) {
 		
