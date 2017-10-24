@@ -25,8 +25,10 @@ public class CaesarCipher {
 			keyAdded = (index + key) % alpha.length();
 			
 			//System.out.println(keyAdded);
-			System.out.println(alpha.charAt(keyAdded));
+			//System.out.println(alpha.charAt(keyAdded));
+			secretText = secretText + alpha.charAt(keyAdded);
 		}
+		System.out.println("\nYour secert message is " + secretText);
 		return secretText;
 		
 	}

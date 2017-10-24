@@ -12,9 +12,9 @@ public class runner {
 		String plainText = kbd.nextLine().toLowerCase();
 		System.out.println("Please enter the key: ");
 		int key = kbd.nextInt();
-		System.out.println("Your key is " + key);
+		//System.out.println("Your key is " + key);
 		String codedText = myCipher.encode(plainText, key);
-		System.out.println("Your encoded message is: " + codedText);
+		//System.out.println("Your encoded message is: " + codedText);
 
 	}
 
