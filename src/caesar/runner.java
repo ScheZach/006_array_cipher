@@ -64,6 +64,7 @@ public class runner {
 				break;
 			case "Exit":
 				JOptionPane.showMessageDialog(null, "Sorry for wasting your time");
+				System.exit(0);
 				break;
 			default:
 				JOptionPane.showMessageDialog(null, "I didn't understand that");
