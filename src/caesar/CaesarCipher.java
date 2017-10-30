@@ -20,7 +20,6 @@ public class CaesarCipher {
 		for (int i=0; i < plainText.length(); i++) {
 			index = alpha.indexOf(plainText.charAt(i));
 			//System.out.println(index);
-			keyAdded = index + key;
 			//Doug's Method
 			keyAdded = (index + key) % alpha.length();
 			if (plainText.charAt(i) == ' ') {
@@ -34,6 +33,27 @@ public class CaesarCipher {
 		//System.out.println("\nYour secert message is " + secretText);
 		return secretText;
 		
+	}
+	public String decode(String codedText, int key) {
+		
+		String decodedTextBeta = "";
+		int index, keyAdded;
+		
+		for (int i=0; i < codedText.length(); i++) {
+			index = alpha.indexOf(codedText.charAt(i));
+			//System.out.println(index);
+			//Doug's Method
+			keyAdded = index - key;
+			if (codedText.charAt(i) == ' ') {
+				keyAdded = index;
+			}
+			
+			//System.out.println(keyAdded);
+			//System.out.println(alpha.charAt(keyAdded));
+			decodedTextBeta = decodedTextBeta + alpha.charAt(keyAdded);
+		}
+		
+		return decodedTextBeta;
 	}
 	//Each char that I read from plainText I find the index in alpha
 	//for example, read A look up index for A get 0
