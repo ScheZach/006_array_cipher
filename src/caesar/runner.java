@@ -62,12 +62,12 @@ public class runner {
 				break;
 			case "Decode":
 				msg = "Please enter the plain text to encode:";
-				plainText = JOptionPane.showInputDialog(msg).toLowerCase();
+				codedText = JOptionPane.showInputDialog(msg).toLowerCase();
 				msg = "Please enter the key:";
 				key = Integer.parseInt(JOptionPane.showInputDialog(msg));
 				//System.out.println("Your key is " + key);
-				codedText = myCipher.encode(plainText, key);
-				JOptionPane.showMessageDialog(null, "Your encoded message is: " + codedText);
+				String decodedText = myCipher.encode(plainText, key);
+				JOptionPane.showMessageDialog(null, "Your encoded message is: " + decodedText);
 				break;
 			case "Crack":
 				JOptionPane.showMessageDialog(null, "Crack");
