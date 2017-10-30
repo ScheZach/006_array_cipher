@@ -20,6 +20,10 @@ public class runner {
 			int comfirm = JOptionPane.showConfirmDialog(null, msg);
 			Scanner kbd = new Scanner(System.in);
 			*/
+			String plainText = "";
+			int key = 0;
+			String codedText = "";
+			
 			
 			Object[] possibilities = {"Encode", "Decode", "Crack", "Exit"};
 			String showFirst = "Encode";
@@ -45,19 +49,25 @@ public class runner {
 				JOptionPane.showMessageDialog(null, "Your encoded message is: " + codedText);
 			}//end of if
 			*/
+			CaesarCipher myCipher = new CaesarCipher();
 			switch (selection) {
 			case "Encode":
-				CaesarCipher myCipher = new CaesarCipher();
 				msg = "Please enter the plain text to encode:";
-				String plainText = JOptionPane.showInputDialog(msg).toLowerCase();
+				plainText = JOptionPane.showInputDialog(msg).toLowerCase();
 				msg = "Please enter the key:";
-				int key = Integer.parseInt(JOptionPane.showInputDialog(msg));
+				key = Integer.parseInt(JOptionPane.showInputDialog(msg));
 				//System.out.println("Your key is " + key);
-				String codedText = myCipher.encode(plainText, key);
+				codedText = myCipher.encode(plainText, key);
 				JOptionPane.showMessageDialog(null, "Your encoded message is: " + codedText);
 				break;
 			case "Decode":
-				JOptionPane.showMessageDialog(null, "Decoder");
+				msg = "Please enter the plain text to encode:";
+				plainText = JOptionPane.showInputDialog(msg).toLowerCase();
+				msg = "Please enter the key:";
+				key = Integer.parseInt(JOptionPane.showInputDialog(msg));
+				//System.out.println("Your key is " + key);
+				codedText = myCipher.encode(plainText, key);
+				JOptionPane.showMessageDialog(null, "Your encoded message is: " + codedText);
 				break;
 			case "Crack":
 				JOptionPane.showMessageDialog(null, "Crack");
