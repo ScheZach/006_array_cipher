@@ -1,12 +1,12 @@
 Grade Check point #1: encoding
 
-1. JOP
+1. JOP _/
 2. executable jar
 3. JOP - ask do you want to encode, decode, or crack?
--- branch, right now we only have encode
-4. for encoding - ask for the plain text msg - another JOP
-5. ask for the key (JOP)
-6. display for the encoded another msg (Y/n) trap errors as well
+-- branch, right now we only have encode _/
+4. for encoding - ask for the plain text msg - another JOP _/
+5. ask for the key (JOP) _/
+6. display for the encoded another msg (Y/n) trap errors as well _/
 7. loop -ask "Do you want to encode another msg (Y/n) _/
 
 grade check point #2: decoding:

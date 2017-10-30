@@ -26,13 +26,13 @@ public class runner {
 			Scanner kbd = new Scanner(System.in);
 		
 			CaesarCipher myCipher = new CaesarCipher();
-			System.out.println("Please enter the plain text to encode:");
-			String plainText = kbd.nextLine().toLowerCase();
-			System.out.println("Please enter the key: ");
-			int key = kbd.nextInt();
+			msg = "Please enter the plain text to encode:";
+			String plainText = JOptionPane.showInputDialog(msg).toLowerCase();
+			msg = "Please enter the key:";
+			int key = Integer.parseInt(JOptionPane.showInputDialog(msg));
 			//System.out.println("Your key is " + key);
 			String codedText = myCipher.encode(plainText, key);
-			System.out.println("Your encoded message is: " + codedText);
+			JOptionPane.showMessageDialog(null, "Your encoded message is: " + codedText);
 			
 			msg = "Do you want to do this again? (Y/n)";
 			ConfirmStart = JOptionPane.showInputDialog(msg);
