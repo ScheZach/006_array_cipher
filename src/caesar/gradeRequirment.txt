@@ -10,3 +10,9 @@ Grade Check point #1: encoding
 7. loop -ask "Do you want to encode another msg (Y/n) _/
 
 grade check point #2: decoding:
+
+1. All JOP's, executable jar (no scanner or syso)
+2. Select decode, you enter the coded msg
+3. Enter the key
+4. Program decodesm, JOP's the decoded msg
+5. fix a-wrap
