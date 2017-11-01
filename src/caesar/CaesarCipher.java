@@ -47,6 +47,9 @@ public class CaesarCipher {
 			if (codedText.charAt(i) == ' ') {
 				keyAdded = index;
 			}
+			if (keyAdded < 0) {
+				keyAdded = alpha.length()- (index + key);
+			}
 			
 			//System.out.println(keyAdded);
 			//System.out.println(alpha.charAt(keyAdded));
