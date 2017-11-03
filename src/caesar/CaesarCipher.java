@@ -1,5 +1,7 @@
 package caesar;
 
+import javax.swing.JOptionPane;
+
 public class CaesarCipher {
 	
 	private String alpha = "abcdefghijklmnopqrstuvwxyz 0123456789.:'";
@@ -62,5 +64,21 @@ public class CaesarCipher {
 	//for example, read A look up index for A get 0
 	//then, add key to that index, so A index 0 becomes 0 + key
 	//and 0+key becomes my coded char
+	public String crack(String codedText) {
+		String msg = "";
+		String testText= "";
+		int index, keyAdded;
+		int key = 1;
+		for (int i=0; i < codedText.length(); i++) {
+			index = alpha.indexOf(codedText.charAt(i));
+			keyAdded = index - key;
+			testText = testText + alpha.charAt(keyAdded);
+		}
+		msg = "Does " + testText + " make sense: (Y/n)";
+		String crackTest = JOptionPane.showInputDialog(msg);
+		
+		
+		return null;
+	}
 
 }
