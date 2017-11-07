@@ -70,8 +70,8 @@ public class runner {
 			case "Crack":
 				msg= "Please enter the encoded text to crack:";
 				codedText = JOptionPane.showInputDialog(msg).toLowerCase();
-				String CrackedKey = myCipher.crack(codedText);
-				JOptionPane.showMessageDialog(null, "Your message is " + CrackedKey);
+				int CrackedKey = myCipher.crack(codedText);
+				JOptionPane.showMessageDialog(null, "Your key is " + CrackedKey);
 				break;
 			case "Exit":
 				JOptionPane.showMessageDialog(null, "Sorry for wasting your time");

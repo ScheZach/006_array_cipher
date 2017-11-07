@@ -49,7 +49,7 @@ public class CaesarCipher {
 			if (codedText.charAt(i) == ' ') {
 				keyAdded = index;
 			}
-			if (keyAdded < 0) {
+			else if (keyAdded < 0) {
 				keyAdded = alpha.length()- (index + key);
 			}
 			
@@ -64,21 +64,40 @@ public class CaesarCipher {
 	//for example, read A look up index for A get 0
 	//then, add key to that index, so A index 0 becomes 0 + key
 	//and 0+key becomes my coded char
-	public String crack(String codedText) {
+	public int crack(String codedText) {
 		String msg = "";
-		String testText= "";
 		int index, keyAdded;
+		
+		boolean StopLoop = false;
+		
 		int key = 1;
-		for (int i=0; i < codedText.length(); i++) {
-			index = alpha.indexOf(codedText.charAt(i));
-			keyAdded = index - key;
-			testText = testText + alpha.charAt(keyAdded);
-		}
-		msg = "Does " + testText + " make sense: (Y/n)";
-		String crackTest = JOptionPane.showInputDialog(msg);
-		
-		
-		return null;
+			while (StopLoop == false) {
+				String testText= "";
+				for (int i=0; i < codedText.length(); i++) {
+					index = alpha.indexOf(codedText.charAt(i));
+					keyAdded = index - key;
+					if (keyAdded < 0) {
+						keyAdded = alpha.length()- (index + key);
+					}
+					else if (codedText.charAt(i) == ' ') {
+						keyAdded = index;
+					}
+					testText = testText + alpha.charAt(keyAdded);
+				}
+				msg = "Does " + testText + " make sense: (Y/n)";
+				String crackTest = JOptionPane.showInputDialog(msg);
+				if (crackTest.equalsIgnoreCase("n") || crackTest.equalsIgnoreCase("no")) {
+					StopLoop = false;
+					key = key + 1;
+				}//end of if
+				else if (crackTest.equalsIgnoreCase("y") || crackTest.equalsIgnoreCase("yes")) {
+					StopLoop = true;
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "I'm sorry but I don't understand that.");
+				}
+			}// end of while loop
+		return key;
 	}
 
 }
